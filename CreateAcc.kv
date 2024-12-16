@@ -1,0 +1,45 @@
+MDScreen:
+    name:"tao_tai_khoan"
+    Image:
+        source: 'maintheme.jpg'
+        size_hint: None, None
+        width: '360000000dp'
+        height: '640000dp'
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+    MDLabel:
+        id:xx
+        text:"TẠO TÀI KHOẢN"
+        pos_hint:{"center_x":0.45,"center_y":.90}
+        font_size:"35sp"
+        halign:"center"
+    MDFloatLayout:
+        pos_hint:{"center_x":.5,"center_y":.5}
+        size_hint:.35,.55
+        MDTextFieldRound:
+            id:name
+            hint_text:"tên"
+            icon_right:"account"
+            pos_hint:{"center_x":.45,"center_y":.75}
+            size_hint:.55,.10
+            font_size:18
+        MDTextFieldRound:
+            id:password
+            hint_text:"mật khẩu"
+            icon_right:"city"
+            pos_hint:{"center_x":.45,"center_y":.45}
+            size_hint:.55,.10
+            font_size:18
+    MDRoundFlatButton:
+        text:"trở về"
+        text_color: 0, 1, 0, 1
+        size_hint:None,None
+        pos_hint:{"center_x":.35,"center_y":.15}
+        size:(100,190)
+        on_release: root.manager.current = 'man_hinh_dang_nhap'
+    MDRoundFlatButton:
+        text:"thêm"
+        text_color: 0, 1, 0, 1
+        size_hint:None,None
+        pos_hint:{"center_x":.55,"center_y":.15}
+        size:(100,190)
+        on_release:app.create(name.text,password.text)
